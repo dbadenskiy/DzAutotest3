@@ -25,12 +25,11 @@ public class SimpleJunitTest {
         $("#lastName").setValue("Badenskiy");
         $("#userEmail").setValue("Dima@mail.ru");
         $("#genterWrapper").$(byText("Male")).click();
-        $("#userForm #userNumber").setValue("89771970000");
+        $("#userForm #userNumber").setValue("9771970000");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("March");
         $(".react-datepicker__year-select").selectOption("1996");
-        $(".react-datepicker__day.react-datepicker__day--029").click();
+        $(".react-datepicker__day--029:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("Test.jpg");
@@ -43,7 +42,7 @@ public class SimpleJunitTest {
         $(".table").shouldHave(text("Student Name")).shouldHave(text("Dmitriy Badenskiy"));
         $(".table").shouldHave(text("Student Email")).shouldHave(text("Dima@mail.ru"));
         $(".table").shouldHave(text("Gender")).shouldHave(text("Male"));
-        $(".table").shouldHave(text("Mobile")).shouldHave(text("89771970000"));
+        $(".table").shouldHave(text("Mobile")).shouldHave(text("9771970000"));
         $(".table").shouldHave(text("Date of Birth")).shouldHave(text("29 March,1996"));
         $(".table").shouldHave(text("Subjects")).shouldHave(text("Maths"));
         $(".table").shouldHave(text("Hobbies")).shouldHave(text("Sports"));
