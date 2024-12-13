@@ -21,7 +21,7 @@ public class SimpleJunitTest {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
-        $("#firstName").setValue("Dmitriy");
+        $("#firstName").setValue("Dmitrij");
         $("#lastName").setValue("Badenskiy");
         $("#userEmail").setValue("Dima@mail.ru");
         $("#genterWrapper").$(byText("Male")).click();
@@ -39,7 +39,7 @@ public class SimpleJunitTest {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table").shouldHave(text("Student Name")).shouldHave(text("Dmitriy Badenskiy"));
+        $(".table").shouldHave(text("Student Name")).shouldHave(text("Dmitrij Badenskiy"));
         $(".table").shouldHave(text("Student Email")).shouldHave(text("Dima@mail.ru"));
         $(".table").shouldHave(text("Gender")).shouldHave(text("Male"));
         $(".table").shouldHave(text("Mobile")).shouldHave(text("9771970000"));
